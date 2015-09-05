@@ -1,20 +1,24 @@
-<ion-view view-title="History">
+<ion-view view-title="Logbook">
   <ion-content class="padding">
+
     <div class="list card">
-    <div class="item item-divider">Weekly Calories</div>
-      <div class="item item-body">
-        <div ng-controller="GraphCtrl">
-          <canvas id="line" class="chart chart-line" data="graph.data" labels="graph.labels" series='graph.series' chart-legend="true" height="200"></canvas>
+      <div class="item item-divider">Today's Calories</div>
+        <div class="item item-body">
+          <div ng-controller="DailyGraphCtrl">
+            <canvas id="line" class="chart chart-line" data="graph.data" labels="graph.labels" series='graph.series' height="100"></canvas>
         </div>
       </div>
     </div>
-    <div class="item item-divider">Weekly Calories</div>
-      <div class="item item-body">
-        <div ng-controller="GraphCtrl">
-          <canvas id="line" class="chart chart-line" data="graph.data" labels="graph.labels" series='graph.series' chart-legend="true" height="200"></canvas>
+
+    <div class="list card">
+      <div class="item item-divider">Weekly Calories</div>
+        <div class="item item-body">
+          <div ng-controller="GraphCtrl">
+            <canvas id="line" class="chart chart-line" data="graph.data" labels="graph.labels" series='graph.series' height="100"></canvas>
         </div>
       </div>
     </div>
+    
     <div class="list card">
       <div class="item item-divider">Recent Eats</div>
       <div class="item item-body">
