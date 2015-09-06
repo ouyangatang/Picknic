@@ -64,6 +64,7 @@ angular.module('starter.controllers', ['chart.js', 'ionic', 'ngCordova', 'uiGmap
     }*/
 
     $scope.takePicture = function() {
+
         var options = { 
             quality : 75, 
             destinationType : Camera.DestinationType.DATA_URL, 
@@ -77,8 +78,12 @@ angular.module('starter.controllers', ['chart.js', 'ionic', 'ngCordova', 'uiGmap
         };
  
         $cordovaCamera.getPicture(options).then(function(imageData) {
+            alert('FUCK YES');
             $scope.imgURI = "data:image/jpeg;base64," + imageData;
         }, function(err) {
+            console.log('dsfjlasdfkdsa');
+            alert(err);
+            console.log(err);
             // An error occured. Show a message to the user
         });
     }
