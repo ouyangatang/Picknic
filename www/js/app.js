@@ -75,7 +75,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     views: {
       'tab-suggest': {
         templateUrl: 'templates/tab-suggest.html',
-        controller: 'GraphCtrl'
+        controller: 'MapCtrl'
       }
     }
   });
