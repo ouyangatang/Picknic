@@ -3,12 +3,13 @@ Create tabs with an icon and label, using the tabs-positive style.
 Each tab's child <ion-nav-view> directive will have its own
 navigation history that also transitions its views in and out.
 -->
-<ion-tabs class="tabs-icon-top tabs-color-active-positive" ng-controller = "CamCtrl">
+<ion-tabs class="tabs-icon-top tabs-color-active-positive">
 
   <ion-tab title="Logbook" icon-off="ion-ios-bookmarks-outline" icon-on="ion-ios-bookmarks" href="#/tab/dash">
     <ion-nav-view name="tab-dash"></ion-nav-view>
   </ion-tab>
 
+  
   <ion-tab title="Camera" icon-off="ion-ios-camera-outline" icon-on="ion-ios-camera" value = "Take Picture" id="one" ng-click="takePicture(); show();">
     <ion-nav-view name="tab-chats"></ion-nav-view>
   </ion-tab>
