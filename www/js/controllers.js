@@ -64,7 +64,6 @@ angular.module('starter.controllers', ['chart.js', 'ionic', 'ngCordova', 'uiGmap
     }*/
 
     $scope.takePicture = function() {
-        alert('ghfffkkfjfkfhkfhkfh');
         var options = { 
             quality : 75, 
             destinationType : Camera.DestinationType.DATA_URL, 
