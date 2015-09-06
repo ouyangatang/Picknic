@@ -1,55 +1,49 @@
-<ion-view view-title="Logbook">
-  <ion-content class="padding">
+<ion-view view-title="Picknic">
+<div class="bar bar-subheader">
+  <h2 class="title">Logbook</h2>
+</div>
+  <ion-content class="padding has-subheader">
 
-          <div>
-             <input type="file" fileread="fileee" name="fileToUpload" id="fileToUpload" value = "Snap" class="button" id = "one">
-             
-             <input type="button" value = "Snap" class="button" id = "one"  ng-click="submitForm()">
-             
-             <input type="button" value = "Submit" class = "button" id = "two" ng-click = "moveToDataScreen()" disabled = "disabled">
-             <!--<img ng-show="imgURI !== undefined" ng-src="{{imgURI}}">
-            <img ng-show="imgURI === undefined" ng-src="http://placehold.it/300x300"> -->
-        </div>
-
-
-      
-    <div class="list card">
-      <div class="item item-divider">Weekly Food Groups</div>
-        <div class="item item-body">
-          <div ng-controller="GroupGraphCtrl">
-            <canvas id="pie" class="chart chart-doughnut" data="graph.data" labels="graph.labels" height="200" chart-legend="true"></canvas>
-        </div>
+    <div class = "input">
+      <div class="list list-inset" id="oldsnap">
+          <input type="file" fileread="fileee" name="fileToUpload" id="fileToUpload" >
       </div>
+          <input type="submit" id="oldsubmit" class="button button-small icon-right button-light" value = "Add Snap">
     </div>
 
-    <div class="list card">
-      <div class="item item-divider">Weekly Calories</div>
-        <div class="item item-body">
+  
+      <div class="item item-divider item-positive">Weekly Food Groups</div>
+        <div class="item item-body item-stable">
+          <div ng-controller="GroupGraphCtrl">
+            <canvas id="pie" class="chart chart-doughnut" data="graph.data" labels="graph.labels" height="100" chart-legend="false"></canvas>
+        </div>
+      </div>
+      <br>
+      <div class="item item-divider item-positive">Weekly Calories</div>
+        <div class="item item-body item-stable">
           <div ng-controller="GraphCtrl">
             <canvas id="line" class="chart chart-line" data="graph.data" labels="graph.labels" series='graph.series' height="100"></canvas>
         </div>
       </div>
-    </div>
-    
-    <div class="list card">
+
+      <br>
       <div ng-controller="RecentMealsCtrl">
-        <div class="item item-divider">Recent Eats</div>
-        <div class="item item-body">
+        <div class="item item-divider item-positive">Recent Eats</div>
+        <div class="item item-body item-stable">
           <div>
             {{data[2].split("<>")[0]}} -- {{data[2].split("<>")[1]}} cals on {{data[2].split("<>")[2]}}
           </div>
         </div>
-        <div class="item item-body">
+        <div class="item item-body item-stable">
           <div>
-            {{data[1].split("<>")[0]}} -- {{data[1].split("<>")[1]}} cals on {{data[1].split("<>")[2]}}
+             {{data[1].split("<>")[0]}} -- {{data[1].split("<>")[1]}} cals on {{data[1].split("<>")[2]}}
           </div>
         </div>
-        <div class="item item-body">
+        <div class="item item-body item-stable">
           <div>
-            {{data[0].split("<>")[0]}} -- {{data[0].split("<>")[1]}} cals on {{data[0].split("<>")[2]}}
+             {{data[0].split("<>")[0]}} -- {{data[0].split("<>")[1]}} cals on {{data[0].split("<>")[2]}}
           </div>
         </div>
-      </div>
-    </div>
+       </div>
   </ion-content>
 </ion-view>

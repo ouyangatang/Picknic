@@ -50,26 +50,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   })
 
-  /*.state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'CamCtrl'
-        }
-      }
-    })*/
-
-  .state('tab.cam', {
-    url: '/cam',
-    views: {
-      'tab-cam': {
-        templateUrl: 'templates/tab-cam.html',
-        controller: 'CamCtrl'
-      }
-    }
-  })
-
   .state('tab.account', {
     url: '/account',
     views: {

@@ -1,23 +1,24 @@
-<ion-view view-title="Confirmation">
-  <ion-content class="padding">
-    <div ng-controller="DoGraphCtrl">
-      <h1>You ate {{calCount}} calories.</h1>
-      <div class="list card">
-        <div class="item item-body">
-         {{calCount}} 
-      </div>
-      </div>
-        <div class="item item-divider">Your Snap</div>
-        <div class="item item-body">
-          <div>
-            <canvas id="pie" class="chart chart-doughnut" data="graph.data" labels="graph.labels" height="200" chart-legend="true"></canvas>
-          </div>
+<ion-view view-title="Picknic">
+<div class="bar bar-subheader">
+  <h2 class="title">Recent Analysis</h2>
+</div>
+  <ion-content class="padding has-subheader">
+  <div ng-controller="DoGraphCtrl">
+    <h1 class ="report">You ate {{calCount}} calories.</h1>
+
+
+      <div class="item item-divider item-positive">Status Update</div>
+      <div class="item item-body item-stable">
+        You're at {{calCount}}/2250 for the day. 
+    </div>
+    <br>
+      <div class="item item-divider item-positive">Your Snap</div>
+      <div class="item item-body item-stable">
+        <div>
+          <canvas id="pie" class="chart chart-doughnut" data="graph.data" labels="graph.labels" height="200" chart-legend="true"></canvas>
         </div>
       </div>
     </div>
   </ion-content>
-    <!--<ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>-->
 </ion-view>
 

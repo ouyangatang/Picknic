@@ -1,9 +1,22 @@
 .angular-google-map-container { 
   height: 200px; 
 }
-#one {
-	width: 49%;
+.report {
+	font-size: 30px;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 10px;
 }
-#two {
-	width: 49%;
+#oldsnap {
+	width: 85px;
+	display: inline-block;
+	color: transparent;
+	margin-top: -4px;
+	overflow: hidden;
+	margin-bottom: 8px;
+}
+#oldsubmit {
+	width: 74.9%;
+	display: inline-block;
+	margin-bottom: -40px;
 }

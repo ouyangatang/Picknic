@@ -41,6 +41,7 @@ angular.module('starter.controllers', ['chart.js', 'ionic', 'ngCordova', 'uiGmap
   $scope.data = FoodData.recentThreeMeals;
 })
 
+
 .directive('fileModel', ['$parse', function ($parse) {
     return {
         restrict: 'A',
@@ -58,6 +59,19 @@ angular.module('starter.controllers', ['chart.js', 'ionic', 'ngCordova', 'uiGmap
 }])
 
 .controller('CamCtrl', function($scope, $cordovaCamera, FoodData, formDataObject, $http) {
+
+/*
+.controller('ButtonCtrl', function($scope) {
+  $('#submit').click(function(){
+    $('#oldsubmit').click();
+  });
+  $('#snap').click(function(){
+    $('#oldsnap').click();
+  });
+})
+
+.controller('CamCtrl', function($scope, $cordovaCamera, FoodData) {
+>>>>>>> master
 
     /*$scope.takePicture = function() {
         var options = { 
@@ -183,13 +197,14 @@ angular.module('starter.controllers', ['chart.js', 'ionic', 'ngCordova', 'uiGmap
 
   navigator.geolocation.getCurrentPosition($scope.drawMap);
 
-  $.getJSON('http://45.79.140.244:4567/stats/1/'+lat+'/'+lng, function(data) {
+  $.getJSON('http://45.79.140.244:4567/stats/1/'+'39.9011'+'/'+'-75.1719', function(data) {
     console.log(lat);
     console.log(lng);
     console.log(data);
     $scope.suggestions = data["messages"];
   });
 })
+ 
 
 .controller('HomeCtrl', function($scope, uiGmapGoogleMapApi) {
  
