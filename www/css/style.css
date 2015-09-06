@@ -1,3 +1,9 @@
 .angular-google-map-container { 
   height: 200px; 
 }
+#one {
+	width: 49%;
+}
+#two {
+	width: 49%;
+}

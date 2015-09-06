@@ -29,6 +29,14 @@ angular.module('starter.controllers', ['chart.js', 'ionic', 'ngCordova', 'uiGmap
   $scope.graph.labels = ['Fruits', 'Vegetables', 'Meat', 'Grains', 'Sweets']; 
 })
 
+.controller('GroupGraphCtrl', function($scope, FoodData) {
+  //donut
+  $scope.graph = {};    
+  $scope.graph.data = 
+  [202, 234, 66, 690, 908];
+  $scope.graph.labels = ['Fruits', 'Vegetables', 'Meat', 'Grains', 'Sweets']; 
+})
+
 .controller('CamCtrl', function($scope, $cordovaCamera, FoodData) {
 
     /*$scope.takePicture = function() {

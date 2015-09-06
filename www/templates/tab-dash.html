@@ -1,11 +1,20 @@
 <ion-view view-title="Logbook">
   <ion-content class="padding">
 
+          <div ng-controller="CamCtrl">
+             <input type="button" value = "Take Picture" class="button" id = "one"  ng-click="takePicture() ">
+             <input type="button" value = "Submit" class = "button" id = "two" ng-click = "moveToDataScreen()" disabled = "disabled">
+             <!--<img ng-show="imgURI !== undefined" ng-src="{{imgURI}}">
+            <img ng-show="imgURI === undefined" ng-src="http://placehold.it/300x300"> -->
+        </div>
+
+
+      
     <div class="list card">
-      <div class="item item-divider">Today's Calories</div>
+      <div class="item item-divider">Weekly Food Groups</div>
         <div class="item item-body">
-          <div ng-controller="DailyGraphCtrl">
-            <canvas id="line" class="chart chart-line" data="graph.data" labels="graph.labels" series='graph.series' height="100"></canvas>
+          <div ng-controller="GroupGraphCtrl">
+            <canvas id="pie" class="chart chart-doughnut" data="graph.data" labels="graph.labels" height="200" chart-legend="true"></canvas>
         </div>
       </div>
     </div>
