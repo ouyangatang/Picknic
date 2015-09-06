@@ -20,15 +20,16 @@ angular.module('starter.controllers', ['chart.js', 'ionic', 'ngCordova', 'uiGmap
   $scope.graph.series = ['Goals', 'Achieved']; 
 })
 
-.controller('DoGraphCtrl', function($scope) {
+.controller('DoGraphCtrl', function($scope, FoodData) {
   //donut
+  $scope.calCount = FoodData.calCount;
   $scope.graph = {};    
   $scope.graph.data = 
   [500, 400, 150, 690, 430];
   $scope.graph.labels = ['Fruits', 'Vegetables', 'Meat', 'Grains', 'Sweets']; 
 })
 
-.controller('CamCtrl', function($scope, $cordovaCamera) {
+.controller('CamCtrl', function($scope, $cordovaCamera, FoodData) {
 
     $scope.takePicture = function() {
         var options = { 
@@ -49,8 +50,11 @@ angular.module('starter.controllers', ['chart.js', 'ionic', 'ngCordova', 'uiGmap
               url: "pick-nic.co/uploadimage", 
               data: {image: imageData} 
           })
-            .done(function(html){
-              $("")
+            .done(function(data){
+              $scope.calCount += data.calories;
+              FoodData.calCount = $scope.calCount;
+              //document.getElementById("totalCalories") = $scope.x
+              $ionicTabsDelegate.select(2);
             });
             
             $scope.imgURI = "data:image/jpeg;base64," + imageData;

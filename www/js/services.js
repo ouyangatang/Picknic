@@ -1,5 +1,12 @@
 angular.module('starter.services', [])
 
+.service('FoodData', function() {
+  var Data = {};
+
+  Data.calCount = 0;
+
+  return Data;
+})
 
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
