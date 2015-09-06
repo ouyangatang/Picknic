@@ -35,8 +35,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('tab', {
     url: '/tab',
     abstract: true,
-    templateUrl: 'templates/tabs.html',
-    controller: 'CamCtrl'
+    templateUrl: 'templates/tabs.html'
   })
 
   // Each tab has its own nav history stack:
@@ -50,7 +49,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   })
 
-  .state('tab.chats', {
+  /*.state('tab.chats', {
       url: '/chats',
       views: {
         'tab-chats': {
@@ -58,7 +57,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           controller: 'CamCtrl'
         }
       }
-    })
+    })*/
+
+  .state('tab.cam', {
+    url: '/cam',
+    views: {
+      'tab-cam': {
+        templateUrl: 'templates/tab-cam.html',
+        controller: 'CamCtrl'
+      }
+    }
+  })
 
   .state('tab.account', {
     url: '/account',

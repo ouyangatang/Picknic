@@ -9,10 +9,13 @@ navigation history that also transitions its views in and out.
     <ion-nav-view name="tab-dash"></ion-nav-view>
   </ion-tab>
 
-  
-  <ion-tab title="Camera" icon-off="ion-ios-camera-outline" icon-on="ion-ios-camera" value = "Take Picture" id="one" ng-click="takePicture(); show();">
-    <ion-nav-view name="tab-chats"></ion-nav-view>
+  <ion-tab title="Camera" icon-off="ion-ios-camera-outline" icon-on="ion-ios-camera" href="#/tab/cam">
+    <ion-nav-view name="tab-cam"></ion-nav-view>
   </ion-tab>
+
+  <!--
+  <ion-tab title="Camera" icon-off="ion-ios-camera-outline" icon-on="ion-ios-camera" value = "Take Picture" id="one" ng-click="takePicture(); show();">
+    <ion-nav-view name="tab-chats"></ion-nav-view> -->
 
   <ion-tab title="Analysis" icon-off="ion-ios-analytics-outline" icon-on="ion-ios-analytics" href="#/tab/account">
     <ion-nav-view name="tab-account"></ion-nav-view>
