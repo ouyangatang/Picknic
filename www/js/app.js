@@ -44,7 +44,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     url: '/dash',
     views: {
       'tab-dash': {
-        templateUrl: 'templates/tab-dash.html'
+        templateUrl: 'templates/tab-dash.html',
+        controller: 'CamCtrl'
       }
     }
   })

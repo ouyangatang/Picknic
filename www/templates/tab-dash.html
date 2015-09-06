@@ -1,9 +1,11 @@
 <ion-view view-title="Logbook">
   <ion-content class="padding">
 
-          <div ng-controller="CamCtrl">
-             <input type="file" name="fileToUpload" id="fileToUpload" value = "Snap" class="button" id = "one"  ng-click="takePicture()">
-             <input type="button" value = "Snap" class="button" id = "one"  ng-click="takePicture()">
+          <div>
+             <input type="file" fileread="fileee" name="fileToUpload" id="fileToUpload" value = "Snap" class="button" id = "one">
+             
+             <input type="button" value = "Snap" class="button" id = "one"  ng-click="submitForm()">
+             
              <input type="button" value = "Submit" class = "button" id = "two" ng-click = "moveToDataScreen()" disabled = "disabled">
              <!--<img ng-show="imgURI !== undefined" ng-src="{{imgURI}}">
             <img ng-show="imgURI === undefined" ng-src="http://placehold.it/300x300"> -->
@@ -30,25 +32,22 @@
     </div>
     
     <div class="list card">
-      <div class="item item-divider">Recent Eats</div>
-      <div class="item item-body">
-        <div>
-          //timestamp //calorie count
+      <div ng-controller="RecentMealsCtrl">
+        <div class="item item-divider">Recent Eats</div>
+        <div class="item item-body">
+          <div>
+            {{data[2].split("<>")[0]}} -- {{data[2].split("<>")[1]}} cals on {{data[2].split("<>")[2]}}
+          </div>
         </div>
-      </div>
-      <div class="item item-body">
-        <div>
-          //timestamp //calorie count
+        <div class="item item-body">
+          <div>
+            {{data[1].split("<>")[0]}} -- {{data[1].split("<>")[1]}} cals on {{data[1].split("<>")[2]}}
+          </div>
         </div>
-      </div>
-      <div class="item item-body">
-        <div>
-          //timestamp //calorie count
-        </div>
-      </div>
-      <div class="item item-body">
-        <div>
-          //timestamp //calorie count
+        <div class="item item-body">
+          <div>
+            {{data[0].split("<>")[0]}} -- {{data[0].split("<>")[1]}} cals on {{data[0].split("<>")[2]}}
+          </div>
         </div>
       </div>
     </div>

@@ -15,10 +15,12 @@
       </div>
     </div>
     <div class="list card">
-      <div class="item item-divider">Suggestions</div>
-      <div class="item item-body">
-        <div>
-          //everyblock
+      <div ng-controller="SuggestionsCtrl">
+        <div class="item item-divider">Suggestions</div>
+        <div class="item item-body">
+          <ion-item ng-repeat="sugg in suggestions">
+            {{sugg}}
+          </ion>
         </div>
       </div>
     </div>

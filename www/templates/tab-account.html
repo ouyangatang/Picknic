@@ -1,15 +1,17 @@
 <ion-view view-title="Confirmation">
   <ion-content class="padding">
-    <h1>You ate 324 calories.</h1>
-    <div class="list card">
-      <div class="item item-body">
-        You're at 568/1800 for the day. 
-    </div>
-    </div>
-      <div class="item item-divider">Your Snap</div>
-      <div class="item item-body">
-        <div>
-          <canvas id="pie" class="chart chart-doughnut" data="graph.data" labels="graph.labels" height="200" chart-legend="true"></canvas>
+    <div ng-controller="DoGraphCtrl">
+      <h1>You ate {{calCount}} calories.</h1>
+      <div class="list card">
+        <div class="item item-body">
+         {{calCount}} 
+      </div>
+      </div>
+        <div class="item item-divider">Your Snap</div>
+        <div class="item item-body">
+          <div>
+            <canvas id="pie" class="chart chart-doughnut" data="graph.data" labels="graph.labels" height="200" chart-legend="true"></canvas>
+          </div>
         </div>
       </div>
     </div>
