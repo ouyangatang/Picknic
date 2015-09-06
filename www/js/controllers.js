@@ -29,6 +29,7 @@ angular.module('starter.controllers', ['chart.js', 'ionic', 'ngCordova', 'uiGmap
 })
 
 .controller('CamCtrl', function($scope, $cordovaCamera) {
+
     $scope.takePicture = function() {
         var options = { 
             quality : 75, 
