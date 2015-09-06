@@ -1,56 +1,48 @@
 <ion-view view-title="Logbook">
   <ion-content class="padding">
 
-          <div ng-controller="CamCtrl">
-             <input type="file" name="fileToUpload" id="fileToUpload" value = "Snap" class="button" id = "one"  ng-click="takePicture()">
-             <input type="button" value = "Snap" class="button" id = "one"  ng-click="takePicture()">
-             <input type="button" value = "Submit" class = "button" id = "two" ng-click = "moveToDataScreen()" disabled = "disabled">
-             <!--<img ng-show="imgURI !== undefined" ng-src="{{imgURI}}">
-            <img ng-show="imgURI === undefined" ng-src="http://placehold.it/300x300"> -->
-        </div>
-
-
-      
-    <div class="list card">
-      <div class="item item-divider">Weekly Food Groups</div>
-        <div class="item item-body">
+    <div class = "input">
+      <div class="list list-inset" id="oldsnap">
+          <input type="file">
+      </div>
+          <input type="submit" id="oldsubmit" class="button button-small icon-right button-light" value = "Add Snap">
+    </div>
+  
+      <div class="item item-divider item-positive">Weekly Food Groups</div>
+        <div class="item item-body item-stable">
           <div ng-controller="GroupGraphCtrl">
-            <canvas id="pie" class="chart chart-doughnut" data="graph.data" labels="graph.labels" height="200" chart-legend="true"></canvas>
+            <canvas id="pie" class="chart chart-doughnut" data="graph.data" labels="graph.labels" height="100" chart-legend="true"></canvas>
         </div>
       </div>
-    </div>
-
-    <div class="list card">
-      <div class="item item-divider">Weekly Calories</div>
-        <div class="item item-body">
+      <br>
+      <div class="item item-divider item-positive">Weekly Calories</div>
+        <div class="item item-body item-stable">
           <div ng-controller="GraphCtrl">
             <canvas id="line" class="chart chart-line" data="graph.data" labels="graph.labels" series='graph.series' height="100"></canvas>
         </div>
       </div>
-    </div>
-    
-    <div class="list card">
-      <div class="item item-divider">Recent Eats</div>
-      <div class="item item-body">
+      <br>
+      <div class="item item-divider item-positive">Recent Eats</div>
+      <div class="item item-body item-stable">
         <div>
           //timestamp //calorie count
         </div>
       </div>
-      <div class="item item-body">
+      <div class="item item-body item-stable">
         <div>
           //timestamp //calorie count
         </div>
       </div>
-      <div class="item item-body">
+      <div class="item item-body item-stable">
         <div>
           //timestamp //calorie count
         </div>
       </div>
-      <div class="item item-body">
+      <div class="item item-body item-stable">
         <div>
           //timestamp //calorie count
         </div>
       </div>
-    </div>
+
   </ion-content>
 </ion-view>

@@ -1,21 +1,20 @@
-<ion-view view-title="Confirmation">
+<ion-view view-title="Recent Analysis">
   <ion-content class="padding">
-    <h1>You ate 324 calories.</h1>
-    <div class="list card">
-      <div class="item item-body">
+    <h1 class ="report">You ate 324 calories.</h1>
+
+
+      <div class="item item-divider item-positive">Status Update</div>
+      <div class="item item-body item-stable">
         You're at 568/1800 for the day. 
     </div>
-    </div>
-      <div class="item item-divider">Your Snap</div>
-      <div class="item item-body">
+    <br>
+      <div class="item item-divider item-positive">Your Snap</div>
+      <div class="item item-body item-stable">
         <div>
           <canvas id="pie" class="chart chart-doughnut" data="graph.data" labels="graph.labels" height="200" chart-legend="true"></canvas>
         </div>
       </div>
     </div>
   </ion-content>
-    <!--<ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>-->
 </ion-view>
 

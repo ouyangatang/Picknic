@@ -37,6 +37,16 @@ angular.module('starter.controllers', ['chart.js', 'ionic', 'ngCordova', 'uiGmap
   $scope.graph.labels = ['Fruits', 'Vegetables', 'Meat', 'Grains', 'Sweets']; 
 })
 
+/*
+.controller('ButtonCtrl', function($scope) {
+  $('#submit').click(function(){
+    $('#oldsubmit').click();
+  });
+  $('#snap').click(function(){
+    $('#oldsnap').click();
+  });
+})
+
 .controller('CamCtrl', function($scope, $cordovaCamera, FoodData) {
 
     /*$scope.takePicture = function() {
@@ -69,7 +79,7 @@ angular.module('starter.controllers', ['chart.js', 'ionic', 'ngCordova', 'uiGmap
         }, function(err) {
             // An error occured. Show a message to the user
         });
-    }*/
+    }
 
     $scope.takePicture = function() {
         var options = { 
@@ -94,7 +104,7 @@ angular.module('starter.controllers', ['chart.js', 'ionic', 'ngCordova', 'uiGmap
             // An error occured. Show a message to the user
         });
     }
-})
+}) */
  
 .controller('HomeCtrl', function($scope, uiGmapGoogleMapApi) {
  
