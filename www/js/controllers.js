@@ -59,7 +59,7 @@ angular.module('starter.controllers', ['chart.js', 'ionic', 'ngCordova', 'uiGmap
     }
 })
  
-.controller('MapCtrl', function($scope, uiGmapGoogleMapApi) {
+.controller('HomeCtrl', function($scope, uiGmapGoogleMapApi) {
  
   $scope.myLocation = {
     lng : '',
@@ -102,6 +102,3 @@ angular.module('starter.controllers', ['chart.js', 'ionic', 'ngCordova', 'uiGmap
   navigator.geolocation.getCurrentPosition($scope.drawMap);  
  
 });
-
-
-
