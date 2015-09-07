@@ -3,13 +3,16 @@
   <h2 class="title">Logbook</h2>
 </div>
   <ion-content class="padding has-subheader">
-
-    <div class = "input">
-      <div class="list list-inset" id="oldsnap">
-          <input type="file" fileread="fileee" name="fileToUpload" id="fileToUpload" ng-click="submitForm()">
-      </div>
-          <input type="submit" id="oldsubmit" class="button button-small icon-right button-light" value = "Add Snap" ng-click = "moveToDataScreen()">
-    </div>
+      <div id="oldsnap">
+          <div id = "hide">
+            <input type="file" fileread="fileee" name="fileToUpload" id="fileToUpload" ng-click="submitForm()" >
+            <input type="submit" id="oldsubmit" class="button button-small icon-right button-light" value = "Add Snap" ng-click = "moveToDataScreen()" >
+          </div>
+          <a href= "#" id = "button" onclick="document.getElementById('fileToUpload').click(); return false;">Get Picture!</a>
+          <a href= "#" id = "button" onclick="document.getElementById('oldsubmit').click(); return false;">Add Snap</a>
+          
+        </div>
+  
 
   
       <div class="item item-divider item-positive">Weekly Food Groups</div>
