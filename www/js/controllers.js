@@ -1,16 +1,18 @@
 angular.module('starter.controllers', ['chart.js', 'ionic', 'ngCordova', 'uiGmapgoogle-maps'])
 
-.controller('GraphCtrl', function($scope) { // Add a simple controller
+.controller('GraphCtrl', function($scope, FoodData) { // Add a simple controller
   $scope.graph = {};                        // Empty graph object to hold the details for this graph
+  $scope.graph.labels = FoodData.dayLabels;
+
   $scope.graph.data = [                     // Add bar data, this will set your bars height in the graph
     //Achieved
-    [1680, 1903, 2016, 1998, 1605, 1756, 1580]
+    FoodData.dailyCalories
   ];
-  $scope.graph.labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']; 
+  
 
 })
 
-.controller('DailyGraphCtrl', function($scope) { 
+.controller('DailyGraphCtrl', function($scope,FoodData) { 
   $scope.graph = {};                        
   $scope.graph.data = [                     
     //Achieved
@@ -24,17 +26,48 @@ angular.module('starter.controllers', ['chart.js', 'ionic', 'ngCordova', 'uiGmap
   //donut
   $scope.calCount = FoodData.calCount;
   $scope.graph = {};    
-  $scope.graph.data = 
-  [500, 400, 150, 690, 430];
-  $scope.graph.labels = ['Fruits', 'Vegetables', 'Meat', 'Grains', 'Sweets']; 
+  $scope.graph.data = FoodData.foodGroupValues;
+  $scope.graph.labels = FoodData.foodGroupNames;
 })
 
 .controller('GroupGraphCtrl', function($scope, FoodData) {
   //donut
   $scope.graph = {};    
-  $scope.graph.data = 
-  [202, 234, 66, 690, 908];
-  $scope.graph.labels = ['Fruits', 'Vegetables', 'Meat', 'Grains', 'Sweets']; 
+  $scope.graph.data = FoodData.weeklyFoodGroups;
+  $scope.graph.labels = FoodData.foodGroupNames; 
+})
+
+.controller('RecentMealsCtrl', function($scope, FoodData) {
+  $scope.data = FoodData.recentThreeMeals;
+})
+
+
+.directive('fileModel', ['$parse', function ($parse) {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+            var model = $parse(attrs.fileModel);
+            var modelSetter = model.assign;
+            
+            element.bind('change', function(){
+                scope.$apply(function(){
+                    modelSetter(scope, element[0].files[0]);
+                });
+            });
+        }
+    };
+}])
+
+.controller('CamCtrl', function($scope, $cordovaCamera, FoodData, formDataObject, $http) {
+
+/*
+.controller('ButtonCtrl', function($scope) {
+  $('#submit').click(function(){
+    $('#oldsubmit').click();
+  });
+  $('#snap').click(function(){
+    $('#oldsnap').click();
+  });
 })
 
 /*
@@ -48,6 +81,7 @@ angular.module('starter.controllers', ['chart.js', 'ionic', 'ngCordova', 'uiGmap
 })
 
 .controller('CamCtrl', function($scope, $cordovaCamera, FoodData) {
+>>>>>>> master
 
     /*$scope.takePicture = function() {
         var options = { 
@@ -81,6 +115,60 @@ angular.module('starter.controllers', ['chart.js', 'ionic', 'ngCordova', 'uiGmap
         });
     }
 
+    $scope.submitForm = function() {
+      console.log($('#fileToUpload')[0].files[0])
+      var file = $('#fileToUpload')[0].files[0];
+      var fd = new FormData();
+        fd.append('file', file);
+        $http.post('http://45.79.140.244:4567/uploadimage', fd, {
+            transformRequest: angular.identity,
+            headers: {'Content-Type': undefined}
+        })
+        .success(function(){
+          console.log("fuck")
+        })
+        .error(function(){
+          console.log("FUCK YOU")
+        });
+      // return $http({
+      //   method: 'POST',
+      //   url: 'http://45.79.140.244:4567/uploadimage',
+      //   headers: {
+      //     'Content-Type': 'multipart/form-data'
+      //   },
+      //   data: {
+      //     file: $('#fileToUpload')[0].files[0]
+      //   }
+      //   //data: new FormData({file: $('#fileToUpload')[0].files[0]})
+      // });
+
+
+
+  return;
+
+            var fd = new FormData(document.getElementById("fileinfo"));
+            fd.append("label", "WEBUPLOAD");
+            $.ajax({
+              url: 'http://45.79.140.244:4567/uploadimage',
+              type: "POST",
+              data: {'file': fd},
+              enctype: 'multipart/form-data',
+              processData: false,  // tell jQuery not to process the data
+              contentType: 'multipart/form-data'   // tell jQuery not to set contentType
+            })
+            
+            .done(function( data ){
+                $scope.calCount += data.calories;
+              FoodData.calCount = $scope.calCount;
+
+                $scope.foodGroup = data;
+                console.log(data);
+            });
+
+
+            return false;
+        }
+
     $scope.takePicture = function() {
         var options = { 
             quality : 75, 
@@ -104,7 +192,29 @@ angular.module('starter.controllers', ['chart.js', 'ionic', 'ngCordova', 'uiGmap
             // An error occured. Show a message to the user
         });
     }
+<<<<<<< HEAD
 }) */
+
+.controller('SuggestionsCtrl', function($scope, uiGmapGoogleMapApi) {
+  lng = 0;
+  lat = 0;
+  $scope.suggestions = [];
+  $scope.drawMap = function(position) {
+    $scope.$apply(function() {
+        lng = position.coords.longitude;
+        lat = position.coords.latitude;
+    });
+  }
+
+  navigator.geolocation.getCurrentPosition($scope.drawMap);
+
+  $.getJSON('http://45.79.140.244:4567/stats/1/'+'39.9011'+'/'+'-75.1719', function(data) {
+    console.log(lat);
+    console.log(lng);
+    console.log(data);
+    $scope.suggestions = data["messages"];
+  });
+})
  
 .controller('HomeCtrl', function($scope, uiGmapGoogleMapApi) {
  

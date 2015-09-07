@@ -7,20 +7,21 @@
       <div class="item item-divider item-positive">Your Location</div>
       <div class="item item-body item-stable">
         <div>
-     
+          <ui-gmap-google-map center='map.center' zoom='map.zoom' dragging='false' options="map.options" scroll="false">
+          </ui-gmap-google-map>
          
 
         </div>
       </div>
       
       <br>
-
-      <div class="item item-divider item-positive">Suggestions</div>
+  <div ng-controller="SuggestionsCtrl">
+    <div class="item item-divider item-positive">Suggestions</div>
       <div class="item item-body item-stable">
-        <div>
-          //everyblock
-        </div>
+        <ion-item ng-repeat="sugg in suggestions">
+            {{sugg}}
+        </ion>
       </div>
-
+  </div>
   </ion-content>
 </ion-view>
